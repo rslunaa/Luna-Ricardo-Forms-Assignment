@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Bird Tracker App</title>
+  </head>
+  <body>
+  <h1>Bird Tracker App</h1>
+    <form id="birds" method="post" action="/confirmation">
+      <div class="mb-3">
+        <label for="species" class="form-label">Species</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="species" name="species" maxlength="20" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="nickname" class="form-label">Nickname</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="nickname" name="nickname" maxlength="20" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="status" name="status" maxlength="20" required>
+        </div>
+      </div>
+      <button type="submit" formaction="/confirmation" class="btn btn-primary">Submit</button>
+    </form>
+
+    <script>
+      $(document).ready(function() {
+        $("#birds").submit(function(event) {
+          event.preventDefault(); // Prevent the default form submission behavior
+          $.ajax({
+            type: "POST",
+            url: "/confirmation",
+            data: $("#birds").serialize(), // Serialize the form data
+            success: function() {
+              window.location.href = "/confirmation"; // Redirect to the confirmation page
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
