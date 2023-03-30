@@ -5,6 +5,15 @@
     <title>Bird Tracker App</title>
   </head>
   <body>
+  <style>
+    body {
+      background-image: url('https://c4.wallpaperflare.com/wallpaper/460/384/910/animals-birds-kingfisher-low-poly-wallpaper-preview.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+}
+</style>
+  <div class="container"<center>
   <h1>Bird Tracker App</h1>
     <form id="birds" method="post" action="/confirmation">
       <div class="mb-3">
@@ -12,7 +21,8 @@
         <div class="input-group">
           <input type="text" class="form-control" id="species" name="species" maxlength="20" required>
         </div>
-      </div>
+     
+    </div>
       <div class="mb-3">
         <label for="nickname" class="form-label">Nickname</label>
         <div class="input-group">
@@ -27,7 +37,8 @@
       </div>
       <button type="submit" formaction="/confirmation" class="btn btn-primary">Submit</button>
     </form>
-
+ </div>
+        </center>
     <script>
       $(document).ready(function() {
         $("#birds").submit(function(event) {
