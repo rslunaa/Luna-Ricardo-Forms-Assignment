@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bird Tracker App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" integrity="sha512-RRsBJvCMeZzG8BtOhhFz9KK+jvpejBtW8kYcY2t0gJxBL4E3WULbMzJgxl9aMvL60Rmrwg8ryg5wY1zp7D00ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
   </head>
-  <body>
-  <style>
-    body {
-      background-image: url('https://c4.wallpaperflare.com/wallpaper/460/384/910/animals-birds-kingfisher-low-poly-wallpaper-preview.jpg');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-}
-</style>
-  <div class="container"<center>
-  <h1>Bird Tracker App</h1>
-    <form id="birds" method="post" action="/confirmation">
-      <div class="mb-3">
-        <label for="species" class="form-label">Species</label>
-        <div class="input-group">
-          <input type="text" class="form-control" id="species" name="species" maxlength="20" required>
-        </div>
-     
-    </div>
-      <div class="mb-3">
-        <label for="nickname" class="form-label">Nickname</label>
-        <div class="input-group">
-          <input type="text" class="form-control" id="nickname" name="nickname" maxlength="20" required>
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="status" class="form-label">Status</label>
-        <div class="input-group">
-          <input type="text" class="form-control" id="status" name="status" maxlength="20" required>
+  <body style="background-image: url('https://c4.wallpaperflare.com/wallpaper/460/384/910/animals-birds-kingfisher-low-poly-wallpaper-preview.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+    <div class="container"><center>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <h1 class="text-center mb-4">Bird Tracker App</h1>
+          <form id="birds" method="post" action="/confirmation">
+            <div class="mb-3">
+              <label for="species" class="form-label">Species</label>
+              <input type="text" class="form-control" id="species" name="species" maxlength="20" required>
+            </div>
+            <div class="mb-3">
+              <label for="nickname" class="form-label">Nickname</label>
+              <input type="text" class="form-control" id="nickname" name="nickname" maxlength="20" required>
+            </div>
+            <div class="mb-3">
+              <label for="status" class="form-label">Status</label>
+              <input type="text" class="form-control" id="status" name="status" maxlength="20" required>
+            </div>
+            <div class="d-grid gap-2 mb-3">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
         </div>
       </div>
-      <button type="submit" formaction="/confirmation" class="btn btn-primary">Submit</button>
-    </form>
- </div>
-        </center>
+    </center></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-7v9lZKkBLi1dT6tIq3IqOvJrKoNl+0Be1Wl9NvxcB1/i5OIQSW63hbPwMkt29dmIADiHSKgQO5O8W5m9TFvXiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
       $(document).ready(function() {
         $("#birds").submit(function(event) {
